@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "comingsoon-1.jpeg",
+      "filename" : "comingsoon.jpeg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "comingsoon.jpeg",
+      "filename" : "comingsoon-1.jpeg",
       "scale" : "2x"
     },
     {

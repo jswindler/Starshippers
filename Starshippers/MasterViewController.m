@@ -94,7 +94,12 @@
   if (starship != nil) {
     cell.nameLabel.text = starship.name;
     cell.priceLabel.text = [NSString stringWithFormat:@"%ld", (long)starship.price];
-    cell.imageView.image = starship.image;
+    if (starship.image != nil) {
+      cell.imageView.image = starship.image;
+    }
+    else {
+      cell.imageView.image = [UIImage imageNamed:@"comingsoon"];
+    }
   }
   
   return cell;

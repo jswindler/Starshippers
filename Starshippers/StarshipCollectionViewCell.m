@@ -17,7 +17,7 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-      self.imageView.image = [UIImage imageNamed:@"comingsoon"];
+
     }
     return self;
 }
