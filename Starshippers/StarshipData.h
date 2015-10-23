@@ -16,6 +16,9 @@
 @property(atomic, assign) NSInteger price;
 @property(atomic, copy) NSString *url;
 @property(atomic, copy) NSMutableArray *pilots;
+@property(atomic, copy) NSString *model;
+@property(atomic, copy) NSString *manufacturer;
+@property(atomic, copy) NSString *length;
 
 - (id)initWithDictionary:(NSDictionary *)dict;
 

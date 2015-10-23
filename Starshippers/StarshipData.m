@@ -18,7 +18,10 @@
     self.price = priceStr.integerValue;
     self.url = [dict objectForKey:@"url"];
     self.pilots = [NSMutableArray arrayWithArray:[dict objectForKey:@"pilots"]];
-    
+    self.model = [dict objectForKey:@"model"];
+    self.manufacturer = [dict objectForKey:@"manufacturer"];
+    self.length = [dict objectForKey:@"length"];
+
     // TODO: Get an image!
     //NSMutableString *imageStr = [NSMutableString stringWithString:[dict objectForKey:@"image"]];
     //NSURL *imageUrl = [NSURL URLWithString:imageStr];

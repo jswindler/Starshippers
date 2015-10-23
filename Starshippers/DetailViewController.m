@@ -10,37 +10,31 @@
 
 @interface DetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *modelLabel;
+@property (weak, nonatomic) IBOutlet UILabel *manufacturerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *costLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lengthLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @end
 
 @implementation DetailViewController
 
-#pragma mark - Managing the detail item
-
-- (void)setDetailItem:(id)newDetailItem {
-  if (_detailItem != newDetailItem) {
-      _detailItem = newDetailItem;
-          
-      // Update the view.
-      [self configureView];
-  }
-}
-
-- (void)configureView {
-  // Update the user interface for the detail item.
-  if (self.detailItem) {
-      self.detailDescriptionLabel.text = [self.detailItem description];
-  }
-}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
-  [self configureView];
-}
 
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
+  if (self.starshipData != nil) {
+    self.nameLabel.text = self.starshipData.name;
+    self.modelLabel.text = self.starshipData.model;
+    self.manufacturerLabel.text = self.starshipData.manufacturer;
+    self.costLabel.text = [NSString stringWithFormat:@"%ld", (long)self.starshipData.price];
+    self.lengthLabel.text = self.starshipData.length;
+
+    // TODO: Google image search by ship name
+    //    self.imageView.image =
+  }
 }
 
 @end

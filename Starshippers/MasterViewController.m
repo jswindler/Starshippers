@@ -108,7 +108,14 @@
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-  
+  StarshipData *starship = [self.starships objectAtIndex:indexPath.row];
+  if (starship != nil) {
+    DetailViewController *detailView = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
+    if (detailView != nil) {
+      detailView.starshipData = starship;
+      [self.navigationController pushViewController:detailView animated:YES];
+    }
+  }
 }
 
 @end
