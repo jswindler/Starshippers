@@ -12,10 +12,11 @@
 		323E05F91BD9F3740048ADCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 323E05F71BD9F3740048ADCC /* Main.storyboard */; };
 		323E05FB1BD9F3740048ADCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 323E05FA1BD9F3740048ADCC /* Assets.xcassets */; };
 		323E05FE1BD9F3740048ADCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 323E05FC1BD9F3740048ADCC /* LaunchScreen.storyboard */; };
-		323E06091BD9F3740048ADCC /* StarshippersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 323E06081BD9F3740048ADCC /* StarshippersTests.m */; };
 		323E06171BD9F4230048ADCC /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 323E06141BD9F4230048ADCC /* MasterViewController.m */; };
 		323E06181BD9F4230048ADCC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 323E06161BD9F4230048ADCC /* DetailViewController.m */; };
 		323E061B1BD9FD370048ADCC /* StarshipCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 323E061A1BD9FD370048ADCC /* StarshipCollectionViewCell.m */; };
+		323E061E1BDA008F0048ADCC /* StarshipData.m in Sources */ = {isa = PBXBuildFile; fileRef = 323E061D1BDA008F0048ADCC /* StarshipData.m */; };
+		323E061F1BDA008F0048ADCC /* StarshipData.m in Sources */ = {isa = PBXBuildFile; fileRef = 323E061D1BDA008F0048ADCC /* StarshipData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,14 +39,14 @@
 		323E05FD1BD9F3740048ADCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		323E05FF1BD9F3740048ADCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		323E06041BD9F3740048ADCC /* StarshippersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarshippersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		323E06081BD9F3740048ADCC /* StarshippersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarshippersTests.m; sourceTree = "<group>"; };
-		323E060A1BD9F3740048ADCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		323E06131BD9F4230048ADCC /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		323E06141BD9F4230048ADCC /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		323E06151BD9F4230048ADCC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		323E06161BD9F4230048ADCC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		323E06191BD9FD370048ADCC /* StarshipCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarshipCollectionViewCell.h; sourceTree = "<group>"; };
 		323E061A1BD9FD370048ADCC /* StarshipCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarshipCollectionViewCell.m; sourceTree = "<group>"; };
+		323E061C1BDA008F0048ADCC /* StarshipData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarshipData.h; sourceTree = "<group>"; };
+		323E061D1BDA008F0048ADCC /* StarshipData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarshipData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				323E05ED1BD9F3740048ADCC /* Starshippers */,
-				323E06071BD9F3740048ADCC /* StarshippersTests */,
 				323E05EC1BD9F3740048ADCC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,6 +95,8 @@
 				323E061A1BD9FD370048ADCC /* StarshipCollectionViewCell.m */,
 				323E06151BD9F4230048ADCC /* DetailViewController.h */,
 				323E06161BD9F4230048ADCC /* DetailViewController.m */,
+				323E061C1BDA008F0048ADCC /* StarshipData.h */,
+				323E061D1BDA008F0048ADCC /* StarshipData.m */,
 				323E05F71BD9F3740048ADCC /* Main.storyboard */,
 				323E05FA1BD9F3740048ADCC /* Assets.xcassets */,
 				323E05FC1BD9F3740048ADCC /* LaunchScreen.storyboard */,
@@ -110,15 +112,6 @@
 				323E05EF1BD9F3740048ADCC /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		323E06071BD9F3740048ADCC /* StarshippersTests */ = {
-			isa = PBXGroup;
-			children = (
-				323E06081BD9F3740048ADCC /* StarshippersTests.m */,
-				323E060A1BD9F3740048ADCC /* Info.plist */,
-			);
-			path = StarshippersTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +219,7 @@
 				323E05F31BD9F3740048ADCC /* AppDelegate.m in Sources */,
 				323E05F01BD9F3740048ADCC /* main.m in Sources */,
 				323E061B1BD9FD370048ADCC /* StarshipCollectionViewCell.m in Sources */,
+				323E061E1BDA008F0048ADCC /* StarshipData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				323E06091BD9F3740048ADCC /* StarshippersTests.m in Sources */,
+				323E061F1BDA008F0048ADCC /* StarshipData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

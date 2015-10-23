@@ -13,10 +13,11 @@
 
 @implementation StarshipCollectionViewCell
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithCoder:aDecoder];
     if (self) {
+      self.imageView.image = [UIImage imageNamed:@"comingsoon"];
     }
     return self;
 }
