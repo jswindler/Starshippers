@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		323E05F01BD9F3740048ADCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 323E05EF1BD9F3740048ADCC /* main.m */; };
+		323E05F31BD9F3740048ADCC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 323E05F21BD9F3740048ADCC /* AppDelegate.m */; };
+		323E05F91BD9F3740048ADCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 323E05F71BD9F3740048ADCC /* Main.storyboard */; };
+		323E05FB1BD9F3740048ADCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 323E05FA1BD9F3740048ADCC /* Assets.xcassets */; };
+		323E05FE1BD9F3740048ADCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 323E05FC1BD9F3740048ADCC /* LaunchScreen.storyboard */; };
+		323E06091BD9F3740048ADCC /* StarshippersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 323E06081BD9F3740048ADCC /* StarshippersTests.m */; };
+		323E06171BD9F4230048ADCC /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 323E06141BD9F4230048ADCC /* MasterViewController.m */; };
+		323E06181BD9F4230048ADCC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 323E06161BD9F4230048ADCC /* DetailViewController.m */; };
+		323E061B1BD9FD370048ADCC /* StarshipCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 323E061A1BD9FD370048ADCC /* StarshipCollectionViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		323E06051BD9F3740048ADCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 323E05E31BD9F3740048ADCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 323E05EA1BD9F3740048ADCC;
+			remoteInfo = Starshippers;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		323E05EB1BD9F3740048ADCC /* Starshippers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starshippers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		323E05EF1BD9F3740048ADCC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		323E05F11BD9F3740048ADCC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		323E05F21BD9F3740048ADCC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		323E05F81BD9F3740048ADCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		323E05FA1BD9F3740048ADCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		323E05FD1BD9F3740048ADCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		323E05FF1BD9F3740048ADCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		323E06041BD9F3740048ADCC /* StarshippersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarshippersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		323E06081BD9F3740048ADCC /* StarshippersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarshippersTests.m; sourceTree = "<group>"; };
+		323E060A1BD9F3740048ADCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		323E06131BD9F4230048ADCC /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		323E06141BD9F4230048ADCC /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		323E06151BD9F4230048ADCC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		323E06161BD9F4230048ADCC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		323E06191BD9FD370048ADCC /* StarshipCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarshipCollectionViewCell.h; sourceTree = "<group>"; };
+		323E061A1BD9FD370048ADCC /* StarshipCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarshipCollectionViewCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		323E05E81BD9F3740048ADCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		323E06011BD9F3740048ADCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		323E05E21BD9F3740048ADCC = {
+			isa = PBXGroup;
+			children = (
+				323E05ED1BD9F3740048ADCC /* Starshippers */,
+				323E06071BD9F3740048ADCC /* StarshippersTests */,
+				323E05EC1BD9F3740048ADCC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		323E05EC1BD9F3740048ADCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				323E05EB1BD9F3740048ADCC /* Starshippers.app */,
+				323E06041BD9F3740048ADCC /* StarshippersTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		323E05ED1BD9F3740048ADCC /* Starshippers */ = {
+			isa = PBXGroup;
+			children = (
+				323E05F11BD9F3740048ADCC /* AppDelegate.h */,
+				323E05F21BD9F3740048ADCC /* AppDelegate.m */,
+				323E06131BD9F4230048ADCC /* MasterViewController.h */,
+				323E06141BD9F4230048ADCC /* MasterViewController.m */,
+				323E06191BD9FD370048ADCC /* StarshipCollectionViewCell.h */,
+				323E061A1BD9FD370048ADCC /* StarshipCollectionViewCell.m */,
+				323E06151BD9F4230048ADCC /* DetailViewController.h */,
+				323E06161BD9F4230048ADCC /* DetailViewController.m */,
+				323E05F71BD9F3740048ADCC /* Main.storyboard */,
+				323E05FA1BD9F3740048ADCC /* Assets.xcassets */,
+				323E05FC1BD9F3740048ADCC /* LaunchScreen.storyboard */,
+				323E05FF1BD9F3740048ADCC /* Info.plist */,
+				323E05EE1BD9F3740048ADCC /* Supporting Files */,
+			);
+			path = Starshippers;
+			sourceTree = "<group>";
+		};
+		323E05EE1BD9F3740048ADCC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				323E05EF1BD9F3740048ADCC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		323E06071BD9F3740048ADCC /* StarshippersTests */ = {
+			isa = PBXGroup;
+			children = (
+				323E06081BD9F3740048ADCC /* StarshippersTests.m */,
+				323E060A1BD9F3740048ADCC /* Info.plist */,
+			);
+			path = StarshippersTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		323E05EA1BD9F3740048ADCC /* Starshippers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 323E060D1BD9F3740048ADCC /* Build configuration list for PBXNativeTarget "Starshippers" */;
+			buildPhases = (
+				323E05E71BD9F3740048ADCC /* Sources */,
+				323E05E81BD9F3740048ADCC /* Frameworks */,
+				323E05E91BD9F3740048ADCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Starshippers;
+			productName = Starshippers;
+			productReference = 323E05EB1BD9F3740048ADCC /* Starshippers.app */;
+			productType = "com.apple.product-type.application";
+		};
+		323E06031BD9F3740048ADCC /* StarshippersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 323E06101BD9F3740048ADCC /* Build configuration list for PBXNativeTarget "StarshippersTests" */;
+			buildPhases = (
+				323E06001BD9F3740048ADCC /* Sources */,
+				323E06011BD9F3740048ADCC /* Frameworks */,
+				323E06021BD9F3740048ADCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				323E06061BD9F3740048ADCC /* PBXTargetDependency */,
+			);
+			name = StarshippersTests;
+			productName = StarshippersTests;
+			productReference = 323E06041BD9F3740048ADCC /* StarshippersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		323E05E31BD9F3740048ADCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Joe;
+				TargetAttributes = {
+					323E05EA1BD9F3740048ADCC = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					323E06031BD9F3740048ADCC = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 323E05EA1BD9F3740048ADCC;
+					};
+				};
+			};
+			buildConfigurationList = 323E05E61BD9F3740048ADCC /* Build configuration list for PBXProject "Starshippers" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 323E05E21BD9F3740048ADCC;
+			productRefGroup = 323E05EC1BD9F3740048ADCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				323E05EA1BD9F3740048ADCC /* Starshippers */,
+				323E06031BD9F3740048ADCC /* StarshippersTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		323E05E91BD9F3740048ADCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				323E05FE1BD9F3740048ADCC /* LaunchScreen.storyboard in Resources */,
+				323E05FB1BD9F3740048ADCC /* Assets.xcassets in Resources */,
+				323E05F91BD9F3740048ADCC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		323E06021BD9F3740048ADCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		323E05E71BD9F3740048ADCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				323E06181BD9F4230048ADCC /* DetailViewController.m in Sources */,
+				323E06171BD9F4230048ADCC /* MasterViewController.m in Sources */,
+				323E05F31BD9F3740048ADCC /* AppDelegate.m in Sources */,
+				323E05F01BD9F3740048ADCC /* main.m in Sources */,
+				323E061B1BD9FD370048ADCC /* StarshipCollectionViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		323E06001BD9F3740048ADCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				323E06091BD9F3740048ADCC /* StarshippersTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		323E06061BD9F3740048ADCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 323E05EA1BD9F3740048ADCC /* Starshippers */;
+			targetProxy = 323E06051BD9F3740048ADCC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		323E05F71BD9F3740048ADCC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				323E05F81BD9F3740048ADCC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		323E05FC1BD9F3740048ADCC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				323E05FD1BD9F3740048ADCC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		323E060B1BD9F3740048ADCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		323E060C1BD9F3740048ADCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		323E060E1BD9F3740048ADCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Starshippers/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joe.Starshippers;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		323E060F1BD9F3740048ADCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Starshippers/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joe.Starshippers;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		323E06111BD9F3740048ADCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StarshippersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joe.StarshippersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Starshippers.app/Starshippers";
+			};
+			name = Debug;
+		};
+		323E06121BD9F3740048ADCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StarshippersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joe.StarshippersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Starshippers.app/Starshippers";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		323E05E61BD9F3740048ADCC /* Build configuration list for PBXProject "Starshippers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				323E060B1BD9F3740048ADCC /* Debug */,
+				323E060C1BD9F3740048ADCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		323E060D1BD9F3740048ADCC /* Build configuration list for PBXNativeTarget "Starshippers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				323E060E1BD9F3740048ADCC /* Debug */,
+				323E060F1BD9F3740048ADCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		323E06101BD9F3740048ADCC /* Build configuration list for PBXNativeTarget "StarshippersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				323E06111BD9F3740048ADCC /* Debug */,
+				323E06121BD9F3740048ADCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 323E05E31BD9F3740048ADCC /* Project object */;
+}
