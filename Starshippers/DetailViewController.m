@@ -29,11 +29,12 @@
     self.nameLabel.text = self.starshipData.name;
     self.modelLabel.text = self.starshipData.model;
     self.manufacturerLabel.text = self.starshipData.manufacturer;
-    self.costLabel.text = [NSString stringWithFormat:@"%ld", (long)self.starshipData.price];
+    self.costLabel.text = [NSString stringWithFormat:@"%ld Credits", (long)self.starshipData.price];
     self.lengthLabel.text = self.starshipData.length;
 
     // TODO: Google image search by ship name
     //    self.imageView.image =
+    self.imageView.image = [UIImage imageNamed:@"comingsoon"];
   }
 }
 
