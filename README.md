@@ -10,7 +10,7 @@ How to build this iOS app:
 
 Notes:
 - I put tags on some of the commits showing how much time had passed since starting the project. For example, commit 30bbe6 (“2Hrs”) was the two-hour marker.
-- I added a couple commits after 2:20 and 2:30 just because these things were quick once the main app was working (pulling API data and displaying it).
+- I added a couple commits at 2:20 and 2:30 just because these things were quick once the main app functionality (requesting API data and displaying it) was working.
 
 Next Steps:
 - I added a “coming soon” image as a placeholder for where I wanted to do a programmatic Google image search for “Star Wars <starship_name>” (where starship_name is the name of the specific ship) and display the first resulting image.
