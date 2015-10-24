@@ -1,12 +1,12 @@
 # Starshippers
 
 How to build this iOS app:
-1. On a Mac, run the App Store app.
-2. In the Mac OS App Store app, do a search for Xcode (it’s free) and download and install it.
-3. Open Xcode, and select Open from the File menu.
-4. Browse to the Starshippers/Starshippers.xcodeproj file and open it.
-5. After the project is open, select a device from the iOS Simulator list at the top of the Xcode window (next to “Starshippers >”). For example, iPhone 6s.
-6. Press the Run button at the top left of the Xcode window.
+- On a Mac, run the App Store app.
+- In the Mac OS App Store app, do a search for Xcode (it’s free) and download and install it.
+- Open Xcode, and select Open from the File menu.
+- Browse to the Starshippers/Starshippers.xcodeproj file and open it.
+- After the project is open, select a device from the iOS Simulator list at the top of the Xcode window (next to “Starshippers >”). For example, iPhone 6s.
+- Press the Run button at the top left of the Xcode window.
 
 Notes:
 - I put tags on some of the commits showing how much time had passed since starting the project. For example, commit 30bbe6 (“2Hrs”) was the two-hour marker.
