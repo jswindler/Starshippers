@@ -13,7 +13,7 @@
 
 @property(atomic, strong) UIImage *image;
 @property(atomic, copy) NSString *name;
-@property(atomic, assign) NSInteger price;
+@property(atomic, assign) unsigned long price;
 @property(atomic, copy) NSString *url;
 @property(atomic, copy) NSMutableArray *pilots;
 @property(atomic, copy) NSString *model;

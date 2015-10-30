@@ -38,6 +38,14 @@
     [self.searchTextField addTarget:self
                              action:@selector(searchTextFieldDidChange:)
                    forControlEvents:UIControlEventEditingChanged];
+
+    [self.minPriceTextField addTarget:self
+                             action:@selector(priceTextFieldDidChange:)
+                   forControlEvents:UIControlEventEditingChanged];
+
+    [self.maxPriceTextField addTarget:self
+                               action:@selector(priceTextFieldDidChange:)
+                     forControlEvents:UIControlEventEditingChanged];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -66,8 +74,6 @@
                                                  StarshipData *starship = [[StarshipData alloc] initWithDictionary:itemData];
                                                  [self.starships addObject:starship];
                                              }
-                                             
-                                             self.filteredStarships = [NSMutableArray arrayWithArray:self.starships];
                                          }
                                          
                                          id nextPage = [result objectForKey:@"next"];
@@ -77,8 +83,7 @@
                                          }
                                          
                                          dispatch_async(dispatch_get_main_queue(), ^{
-                                             // update collection view
-                                             [self.collectionView reloadData];
+                                             [self reloadAll];
                                          });
                                      }
                                      else {
@@ -87,38 +92,107 @@
                                  }] resume];
 }
 
+- (void)updateSearchFiltering {
+    if (self.searchTextField.text.length == 0) {
+        // reset the filter
+        self.filteredStarships = [NSMutableArray arrayWithArray:self.starships];
+    }
+    else {
+        // filter the search results
+        NSArray *searchTerms = [self.searchTextField.text componentsSeparatedByString:@" "];
+        self.filteredStarships = [NSMutableArray array];
+        for (StarshipData *starship in self.starships) {
+            BOOL isMatch = YES;
+            for (NSString *searchTerm in searchTerms) {
+                NSString *trimmedString = [searchTerm stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                if (trimmedString.length > 0 && ![starship.name.lowercaseString containsString:trimmedString.lowercaseString]) {
+                    isMatch = NO;
+                    break;
+                }
+            }
+            
+            if (isMatch) {
+                [self.filteredStarships addObject:starship];
+            }
+        }
+    }
+}
+
+- (void)updatePriceSorting {
+    NSArray *sortedArray;
+    sortedArray = [self.filteredStarships sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSInteger priceA = [(StarshipData *)a price];
+        NSInteger priceB = [(StarshipData *)b price];
+        NSComparisonResult sortResult = NSOrderedSame;
+        if (priceA < priceB) {
+            sortResult = NSOrderedAscending;
+        }
+        else if (priceB < priceA) {
+            sortResult = NSOrderedDescending;
+        }
+        
+        if (self.sortPriceSegmentedControl.selectedSegmentIndex == 1) {
+            // reverse the sort
+            if (sortResult == NSOrderedAscending) {
+                sortResult = NSOrderedDescending;
+            }
+            else if (sortResult == NSOrderedDescending) {
+                sortResult = NSOrderedAscending;
+            }
+        }
+        
+        return sortResult;
+    }];
+    
+    self.filteredStarships = [NSMutableArray arrayWithArray:sortedArray];
+}
+
+- (void)updatePriceFiltering {
+    unsigned long minPrice = 0;
+    if (self.minPriceTextField.text.length > 0) {
+        minPrice = self.minPriceTextField.text.longLongValue;
+    }
+    unsigned long maxPrice = ULONG_LONG_MAX;
+    if (self.maxPriceTextField.text.length > 0) {
+        maxPrice = self.maxPriceTextField.text.longLongValue;
+    }
+    
+    NSMutableArray *tempArray = [NSMutableArray array];
+    for (StarshipData *shipData in self.filteredStarships) {
+        if (shipData.price >= minPrice &&
+            shipData.price <= maxPrice) {
+            [tempArray addObject:shipData];
+        }
+    }
+    
+    self.filteredStarships = tempArray;
+}
+
+- (void)reloadAll {
+    self.filteredStarships = [NSMutableArray arrayWithArray:self.starships];
+    
+    [self updateSearchFiltering];
+    [self updatePriceFiltering];
+    [self updatePriceSorting];
+    [self.collectionView reloadData];
+}
+
 #pragma mark - Actions
 
 - (IBAction)sortPriceValueChanged:(id)sender {
+    [self reloadAll];
+}
+
+- (IBAction)keyboardDoneButtonPressed:(id)sender {
+    // closes the keyboard
 }
 
 - (void)searchTextFieldDidChange:(id)sender {
-  
-  if (self.searchTextField.text.length == 0) {
-    // reset the filter
-    self.filteredStarships = [NSMutableArray arrayWithArray:self.starships];
-  }
-  else {
-    // filter the search results
-    NSArray *searchTerms = [self.searchTextField.text componentsSeparatedByString:@" "];
-    self.filteredStarships = [NSMutableArray array];
-    for (StarshipData *starship in self.starships) {
-      BOOL isMatch = YES;
-      for (NSString *searchTerm in searchTerms) {
-        NSString *trimmedString = [searchTerm stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if (trimmedString.length > 0 && ![starship.name.lowercaseString containsString:trimmedString.lowercaseString]) {
-          isMatch = NO;
-          break;
-        }
-      }
-      
-      if (isMatch) {
-        [self.filteredStarships addObject:starship];
-      }
-    }
-  }
-  
-  [self.collectionView reloadData];
+    [self reloadAll];
+}
+
+- (void)priceTextFieldDidChange:(id)sender {
+    [self reloadAll];
 }
 
 #pragma mark - UICollectionViewDataSource

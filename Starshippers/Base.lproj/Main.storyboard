@@ -36,16 +36,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Find ship by name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rdo-ac-cjU">
-                                <rect key="frame" x="7" y="72" width="361" height="30"/>
+                                <rect key="frame" x="82.5" y="72" width="276.5" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="qAl-Hq-jYt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="keyboardDoneButtonPressed:" destination="daB-bd-FjJ" eventType="editingDidEndOnExit" id="0jC-Uc-OwY"/>
+                                </connections>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pfT-eV-QAH">
-                                <rect key="frame" x="-4" y="110" width="383" height="557"/>
+                                <rect key="frame" x="-4" y="184" width="383" height="483"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BVt-OV-upc">
@@ -97,22 +100,97 @@
                                     <outlet property="delegate" destination="daB-bd-FjJ" id="W4h-jz-rLR"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGP-au-vja">
+                                <rect key="frame" x="16" y="114.5" width="58.5" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Low Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p71-f5-6Yf">
+                                <rect key="frame" x="82.5" y="110" width="134.5" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="keyboardDoneButtonPressed:" destination="daB-bd-FjJ" eventType="editingDidEndOnExit" id="EFt-6N-pHe"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="High Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RbF-tM-wsy">
+                                <rect key="frame" x="225" y="110" width="134" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="keyboardDoneButtonPressed:" destination="daB-bd-FjJ" eventType="editingDidEndOnExit" id="3hX-8R-ncW"/>
+                                </connections>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Y2e-aQ-6N0">
+                                <rect key="frame" x="82.5" y="148" width="276.5" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="Low Price First"/>
+                                    <segment title="High Price First"/>
+                                </segments>
+                                <connections>
+                                    <action selector="sortPriceValueChanged:" destination="daB-bd-FjJ" eventType="valueChanged" id="ZW6-jd-rSy"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBB-pD-Orc">
+                                <rect key="frame" x="16" y="151.5" width="58.5" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jve-pG-gvN">
+                                <rect key="frame" x="16" y="76.5" width="58.5" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DcK-NW-pmv" firstAttribute="top" secondItem="pfT-eV-QAH" secondAttribute="bottom" id="1a9-Hl-nYL"/>
                             <constraint firstItem="rdo-ac-cjU" firstAttribute="top" secondItem="j1s-iS-1pi" secondAttribute="bottom" constant="8" id="784-Q8-4wB"/>
+                            <constraint firstItem="rdo-ac-cjU" firstAttribute="leading" secondItem="ixc-PO-Arr" secondAttribute="leadingMargin" id="80y-d1-RuH"/>
+                            <constraint firstItem="p71-f5-6Yf" firstAttribute="width" secondItem="RbF-tM-wsy" secondAttribute="width" id="9IB-0H-8OC"/>
+                            <constraint firstItem="p71-f5-6Yf" firstAttribute="leading" secondItem="fGP-au-vja" secondAttribute="trailing" constant="8" id="ADW-Ha-bpK"/>
+                            <constraint firstItem="rdo-ac-cjU" firstAttribute="leading" secondItem="Jve-pG-gvN" secondAttribute="trailing" constant="8" id="DOP-xp-4zJ"/>
+                            <constraint firstItem="cBB-pD-Orc" firstAttribute="width" secondItem="Jve-pG-gvN" secondAttribute="width" id="Dda-Qu-beK"/>
+                            <constraint firstItem="pfT-eV-QAH" firstAttribute="top" secondItem="Y2e-aQ-6N0" secondAttribute="bottom" constant="8" id="F3F-wa-cpp"/>
                             <constraint firstItem="pfT-eV-QAH" firstAttribute="top" secondItem="rdo-ac-cjU" secondAttribute="bottom" constant="8" id="GNQ-74-tai"/>
+                            <constraint firstItem="Y2e-aQ-6N0" firstAttribute="leading" secondItem="cBB-pD-Orc" secondAttribute="trailing" constant="8" id="H1A-sE-HFb"/>
                             <constraint firstItem="pfT-eV-QAH" firstAttribute="leading" secondItem="ixc-PO-Arr" secondAttribute="leadingMargin" constant="-20" id="HBi-OP-bzt"/>
+                            <constraint firstItem="cBB-pD-Orc" firstAttribute="centerY" secondItem="Y2e-aQ-6N0" secondAttribute="centerY" id="Ivm-n0-m8J"/>
+                            <constraint firstItem="rdo-ac-cjU" firstAttribute="trailing" secondItem="ixc-PO-Arr" secondAttribute="trailingMargin" id="JGk-CY-ktu"/>
+                            <constraint firstItem="cBB-pD-Orc" firstAttribute="leading" secondItem="ixc-PO-Arr" secondAttribute="leadingMargin" id="Nuh-6q-P24"/>
+                            <constraint firstItem="RbF-tM-wsy" firstAttribute="top" secondItem="rdo-ac-cjU" secondAttribute="bottom" constant="8" id="RdI-fZ-hdp"/>
                             <constraint firstItem="rdo-ac-cjU" firstAttribute="leading" secondItem="ixc-PO-Arr" secondAttribute="leadingMargin" constant="-9" id="S8f-B2-AiP"/>
+                            <constraint firstItem="fGP-au-vja" firstAttribute="width" secondItem="Jve-pG-gvN" secondAttribute="width" id="YWG-Pk-CdK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pfT-eV-QAH" secondAttribute="trailing" constant="-20" id="cnD-VT-piz"/>
                             <constraint firstItem="pfT-eV-QAH" firstAttribute="top" secondItem="rdo-ac-cjU" secondAttribute="bottom" constant="8" id="fb6-4h-5yY"/>
                             <constraint firstItem="rdo-ac-cjU" firstAttribute="trailing" secondItem="ixc-PO-Arr" secondAttribute="trailingMargin" constant="9" id="fph-oP-Jbs"/>
+                            <constraint firstItem="fGP-au-vja" firstAttribute="centerY" secondItem="p71-f5-6Yf" secondAttribute="centerY" id="g6z-te-bfY"/>
+                            <constraint firstItem="RbF-tM-wsy" firstAttribute="trailing" secondItem="ixc-PO-Arr" secondAttribute="trailingMargin" id="kgO-9A-aAW"/>
+                            <constraint firstItem="Y2e-aQ-6N0" firstAttribute="top" secondItem="RbF-tM-wsy" secondAttribute="bottom" constant="8" id="mWf-8m-cjM"/>
+                            <constraint firstItem="p71-f5-6Yf" firstAttribute="centerY" secondItem="RbF-tM-wsy" secondAttribute="centerY" id="pdK-uq-ku9"/>
+                            <constraint firstItem="Y2e-aQ-6N0" firstAttribute="trailing" secondItem="ixc-PO-Arr" secondAttribute="trailingMargin" id="pqq-gR-Fvr"/>
+                            <constraint firstItem="Jve-pG-gvN" firstAttribute="centerY" secondItem="rdo-ac-cjU" secondAttribute="centerY" id="qtf-IF-mQD"/>
+                            <constraint firstItem="RbF-tM-wsy" firstAttribute="leading" secondItem="p71-f5-6Yf" secondAttribute="trailing" constant="8" id="twY-X4-nUV"/>
+                            <constraint firstItem="fGP-au-vja" firstAttribute="leading" secondItem="ixc-PO-Arr" secondAttribute="leadingMargin" id="wpD-qI-UUk"/>
+                            <constraint firstItem="Jve-pG-gvN" firstAttribute="leading" secondItem="ixc-PO-Arr" secondAttribute="leadingMargin" id="zQ9-6f-txe"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="80y-d1-RuH"/>
+                                <exclude reference="S8f-B2-AiP"/>
+                                <exclude reference="fph-oP-Jbs"/>
                                 <exclude reference="GNQ-74-tai"/>
+                                <exclude reference="fb6-4h-5yY"/>
                             </mask>
                         </variation>
                     </view>
@@ -120,7 +198,10 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="collectionView" destination="pfT-eV-QAH" id="C0M-dn-ZLS"/>
+                        <outlet property="maxPriceTextField" destination="RbF-tM-wsy" id="Hc8-at-0bV"/>
+                        <outlet property="minPriceTextField" destination="p71-f5-6Yf" id="N6e-No-nuV"/>
                         <outlet property="searchTextField" destination="rdo-ac-cjU" id="QMa-zF-vOi"/>
+                        <outlet property="sortPriceSegmentedControl" destination="Y2e-aQ-6N0" id="E1j-CP-GuB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2c-Yg-RpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
