@@ -20,24 +20,24 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sortPriceSegmentedControl;
 
 // starships is the underlying data source
-@property NSMutableArray *starships;
+@property (strong, atomic) NSMutableArray *starships;
 
 // filteredStarships is the filtered version of starships
-@property NSMutableArray *filteredStarships;
+@property (strong, atomic) NSMutableArray *filteredStarships;
 
 @end
 
 @implementation MasterViewController
 
 - (void)viewDidLoad {
-  [super viewDidLoad];
-  self.starships = [NSMutableArray array];
-  self.filteredStarships = [NSMutableArray array];
-  [self loadStarshipData];
+    [super viewDidLoad];
+    self.starships = [NSMutableArray array];
+    self.filteredStarships = [NSMutableArray array];
+    [self loadStarshipDataForUrl:[NSURL URLWithString:@"http://swapi.co/api/starships/"]];
   
-  [self.searchTextField addTarget:self
-                action:@selector(searchTextFieldDidChange:)
-      forControlEvents:UIControlEventEditingChanged];
+    [self.searchTextField addTarget:self
+                             action:@selector(searchTextFieldDidChange:)
+                   forControlEvents:UIControlEventEditingChanged];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -49,42 +49,42 @@
   // Dispose of any resources that can be recreated.
 }
 
-- (void)loadStarshipData {
-  // Create request
-  NSURL *url = [NSURL URLWithString:@"http://swapi.co/api/starships/"];
-  //TODO: Get remaining pages of results
-  
-  // show a visual loading indicator
-  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-  
-  [[[NSURLSession sharedSession] dataTaskWithURL:url
-                              completionHandler:^(NSData *data,
-                                                  NSURLResponse *response,
-                                                  NSError *error) {
-                                NSLog(@"Response: %@", response);
-                                if (!error) {
-                                  // Parse JSON response
-                                  NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                                  
-                                  NSArray *results = [result objectForKey:@"results"];
-                                  if (results != nil) {
-                                    for (NSDictionary *itemData in results) {
-                                      StarshipData *starship = [[StarshipData alloc] initWithDictionary:itemData];
-                                      [self.starships addObject:starship];
-                                    }
-                                    
-                                    self.filteredStarships = [NSMutableArray arrayWithArray:self.starships];
-                                    
-                                    dispatch_async(dispatch_get_main_queue(), ^{
-                                      [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-                                      [self.collectionView reloadData];
-                                    });
-                                  }
-                                }
-                                else {
-                                  //TODO: Handle error case
-                                }
-                              }] resume];
+- (void)loadStarshipDataForUrl:(NSURL *)url {
+    // Create request
+    // TODO: show a visual loading indicator
+    [[[NSURLSession sharedSession] dataTaskWithURL:url
+                                 completionHandler:^(NSData *data,
+                                                     NSURLResponse *response,
+                                                     NSError *error) {
+                                     //NSLog(@"Response: %@", response);
+                                     if (!error) {
+                                         // Parse JSON response
+                                         NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                                         NSArray *results = [result objectForKey:@"results"];
+                                         if (results != nil) {
+                                             for (NSDictionary *itemData in results) {
+                                                 StarshipData *starship = [[StarshipData alloc] initWithDictionary:itemData];
+                                                 [self.starships addObject:starship];
+                                             }
+                                             
+                                             self.filteredStarships = [NSMutableArray arrayWithArray:self.starships];
+                                         }
+                                         
+                                         id nextPage = [result objectForKey:@"next"];
+                                         if (nextPage != nil && [nextPage isKindOfClass:[NSString class]]) {
+                                             // get next page
+                                             [self loadStarshipDataForUrl:[NSURL URLWithString:nextPage]];
+                                         }
+                                         
+                                         dispatch_async(dispatch_get_main_queue(), ^{
+                                             // update collection view
+                                             [self.collectionView reloadData];
+                                         });
+                                     }
+                                     else {
+                                         //TODO: Handle error case
+                                     }
+                                 }] resume];
 }
 
 #pragma mark - Actions
@@ -134,7 +134,7 @@
   StarshipData *starship = [self.filteredStarships objectAtIndex:indexPath.row];
   if (starship != nil) {
     cell.nameLabel.text = starship.name;
-    cell.priceLabel.text = [NSString stringWithFormat:@"%ld", (long)starship.price];
+    cell.priceLabel.text = [NSString stringWithFormat:@"%ld CR", (long)starship.price];
     if (starship.image != nil) {
       cell.imageView.image = starship.image;
     }
